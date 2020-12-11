@@ -28,6 +28,10 @@ session_start();
                 <input type="submit" value="Login">
             </div>
         </form>     
+        <?php else: ?>
+            <p>Login con exito !</p>
+               
+
         <?php endif; ?>  
     </div>
 </body>

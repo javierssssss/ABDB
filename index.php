@@ -32,11 +32,8 @@ session_status();
         <?php endif; ?>   
         <?php if ( isset($_SESSION['conectado']) && $_SESSION["conectado"]=="C" ): ?>
             <p>Login con exito !</p>
-          <form name="form1" method="post" action="<?php 
-           
-           session_destroy();
-            header('Location: index.php');
-            ?>" >
+          <form name="form1" method="post"
+           >
             <button type="submit">Salir</button>
 
         </form>  

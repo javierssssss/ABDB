@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_status();
 ?>
 
 <!doctype html>
@@ -28,7 +29,7 @@ session_start();
                 <input type="submit" value="Login">
             </div>
         </form>     
-        <?php elseif ( isset($_SESSION['conectado']) ): ?>
+        <?php elseif ( isset($_SESSION['conectado']) && $_SESSION["conectado"]=="C" ): ?>
             <p>Login con exito !</p>
             <form name="form1" method="post" action="<?php 
             session_destroy();

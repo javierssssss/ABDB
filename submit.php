@@ -11,9 +11,10 @@ try{
     if ( isset($bdd) ) {
         echo "CONECTADO";
         $stmt = $bdd->prepare("SELECT * FROM users");
+        echo $stmt;
         while ($row = $stmt->fetch()) {
            
-            echo $row['usuario']."<br />\n";
+            echo $row['usuario'];
         }
     
     

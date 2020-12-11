@@ -30,7 +30,15 @@ session_start();
         </form>     
         <?php else: ?>
             <p>Login con exito !</p>
-               
+            <form name="form1" method="post" action="<?php 
+            session_start();
+            session_status();
+            session_destroy();
+            header('Location: index.php');
+            ?>" >
+            <button type="submit">Salir</button>
+
+        </form>
 
         <?php endif; ?>  
     </div>

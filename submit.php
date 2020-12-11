@@ -3,6 +3,10 @@ try{
     session_start();
     $un = $_POST['usuario'];
     $pwd = $_POST['clave'];
+    if(empty($un) || empty($pwd)){
+        echo"<script>alert('Debe Llenar los campos vacios');window.location.href='index.php';</script>";
+        die();
+    }
     $bdd = new PDO(
         "mysql:host=" . getenv("MYSQL_ADDON_HOST") . ";dbname=" . getenv("MYSQL_ADDON_DB"),
         getenv("MYSQL_ADDON_USER"),
@@ -27,7 +31,7 @@ try{
         header('Location: index.php');
     }
 }catch(Exception $e){
-    echo $e->getMessage();
+   // echo $e->getMessage();
 }
 
 

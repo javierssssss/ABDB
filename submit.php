@@ -8,14 +8,15 @@ $pwd = $_POST['clave'];
     getenv("MYSQL_ADDON_USER"),
     getenv("MYSQL_ADDON_PASSWORD")
 );
-$var= getenv("MYSQL_ADDON_HOST") ;
-echo $var;
+
 // Check connection
 if ( $bdd!=null ) {
     echo "Connected successfully";
-  $stmt = $bdd->query("SELECT * FROM users");
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE usuario=:id AND clave =:pw");
+    $stmt->execute(['usuario' => $un, 'pw' => $pwd]); 
+    
 while ($row = $stmt->fetch()) {
-    echo $row['name']."<br />\n";
+    echo $row['usuario']."<br />\n";
 }
 
 }else{

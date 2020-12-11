@@ -1,7 +1,7 @@
 <?php
 
-$un = $_POST['usuario'];
-$pwd = $_POST['clave'];
+//$un = $_POST['usuario'];
+//$pwd = $_POST['clave'];
 try{
     $bdd = new PDO(
         "mysql:host=" . getenv("MYSQL_ADDON_HOST") . ";dbname=" . getenv("MYSQL_ADDON_DB"),

@@ -13,7 +13,7 @@ try{
         getenv("MYSQL_ADDON_PASSWORD")
     );
     if ( isset($bdd) ) {
-        echo "CONECTADO";
+        
         $stmt = $bdd->prepare("SELECT * FROM users WHERE usuario=:un AND clave = :pwd");
         /*$stmt->bindValue(':un', 'Joe');
         $stmt->bindValue(':pwd', 'Joe');*/
@@ -22,9 +22,11 @@ try{
         $result = $stmt->fetchAll();
         if (count($result) > 0){
             echo "Logueado";
+            session_status();
             $_SESSION["conectado"]=true;
-            header('Location: index.php');
+           
         }
+        header('Location: index.php');
     
     }else{
         die("Connection failed: " . $conn->connect_error);

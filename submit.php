@@ -14,7 +14,7 @@ try{
     );
     if ( isset($bdd) ) {
         
-        $stmt = $bdd->prepare("SELECT * FROM users WHERE usuario=:un AND clave = :pwd");
+        $stmt = $bdd->prepare("SELECT * FROM users WHERE  BINARY  usuario=:un AND BINARY  clave = :pwd");
         /*$stmt->bindValue(':un', 'Joe');
         $stmt->bindValue(':pwd', 'Joe');*/
 

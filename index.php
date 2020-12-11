@@ -28,18 +28,19 @@ session_status();
                 <!-- Submit Button -->
                 <input type="submit" value="Login">
             </div>
-        </form>     
-        <?php elseif ( isset($_SESSION['conectado']) && $_SESSION["conectado"]=="C" ): ?>
+        </form>    
+        <?php endif; ?>   
+        <?php if ( isset($_SESSION['conectado']) && $_SESSION["conectado"]=="C" ): ?>
             <p>Login con exito !</p>
-            <form name="form1" method="post" action="<?php 
-            session_destroy();
-            header('Location: index.php');
+          <!--  <form name="form1" method="post" action="<?php 
+           // session_destroy();
+            //header('Location: index.php');
             ?>" >
             <button type="submit">Salir</button>
 
-        </form>
-
-        <?php endif; ?>  
+        </form>  -->
+        <?php endif; ?>   
+        
     </div>
 </body>
 </html>

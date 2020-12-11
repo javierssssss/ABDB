@@ -1,12 +1,8 @@
 <?php
-
-
 try{
+    session_start();
     $un = $_POST['usuario'];
     $pwd = $_POST['clave'];
-    echo $un;
-    echo $pwd;
-
     $bdd = new PDO(
         "mysql:host=" . getenv("MYSQL_ADDON_HOST") . ";dbname=" . getenv("MYSQL_ADDON_DB"),
         getenv("MYSQL_ADDON_USER"),
@@ -20,8 +16,10 @@ try{
 
         $stmt->execute(['un' => $un, 'pwd' => $pwd]); 
         $result = $stmt->fetchAll();
-        foreach($result as $row){
-            echo "<li>{$row['usuario']}</li>";
+        if (count($result) > 0){
+            echo "Logueado";
+            $_SESSION["conectado"]=true;
+            header('Location: index.php');
         }
     
     }else{

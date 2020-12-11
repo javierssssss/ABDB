@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -10,6 +14,7 @@
 </head>
 <body>
     <div id="container">
+    <?php       if (!isset($_SESSION['conectado'])): ?>
         <form method="post" action="submit.php">
             <!-- Username -->
             <label for="name">Usuario:</label>
@@ -22,7 +27,8 @@
                 <!-- Submit Button -->
                 <input type="submit" value="Login">
             </div>
-        </form>       
+        </form>     
+        <?php endif; ?>  
     </div>
 </body>
 </html>

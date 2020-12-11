@@ -11,13 +11,12 @@ try{
     if ( isset($bdd) ) {
         echo "CONECTADO";
         $stmt = $bdd->prepare("SELECT * FROM users");
-        echo $stmt;
+        
         $stmt->execute();
-        while ($row = $stmt->fetch()) {
-           
-            echo $row['usuario'];
+        $result = $stmt->fetchAll();
+        foreach($result as $row){
+            echo "<li>{$row['usuario']}</li>";
         }
-    
     
     }else{
         die("Connection failed: " . $conn->connect_error);

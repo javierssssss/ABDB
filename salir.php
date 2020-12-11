@@ -6,5 +6,5 @@ if(!empty($salir)){
     header('Location: https://sql-injection.cleverapps.io ');
 }
 
-header('Location: index.php');
+header('Location: https://sql-injection.cleverapps.io ');
 ?>

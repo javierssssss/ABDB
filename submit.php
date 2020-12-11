@@ -25,15 +25,15 @@ try{
             //echo "Logueado";
             session_status();
             $_SESSION["conectado"]="C";
-            header('Location: index.php');
+            header('Location: https://sql-injection.cleverapps.io ');
         }else{
-            header('Location: index.php');
+            header('Location: https://sql-injection.cleverapps.io ');
         }
        
     
     }else{
         die("Connection failed: " . $conn->connect_error);
-        header('Location: index.php');
+        header('Location: https://sql-injection.cleverapps.io ');
     }
 }catch(Exception $e){
    // echo $e->getMessage();

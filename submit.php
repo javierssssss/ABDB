@@ -8,24 +8,25 @@ try{
         getenv("MYSQL_ADDON_USER"),
         getenv("MYSQL_ADDON_PASSWORD")
     );
-}catch(PDOException $e){
+    if ( isset($bdd) ) {
+        echo "CONECTADO";
+        $stmt = $bdd->prepare("SELECT * FROM users");
+        while ($row = $stmt->fetch()) {
+           
+            echo $row['usuario']."<br />\n";
+        }
+    
+    
+    }else{
+        die("Connection failed: " . $conn->connect_error);
+        header('Location: index.php');
+    }
+}catch(Exception $e){
     echo $e->getMessage();
 }
 
 
 // Check connection
-if ( isset($bdd) ) {
-    
-    $stmt = $bdd->prepare("SELECT * FROM users");
-    while ($row = $stmt->fetch()) {
-        echo "Connected successfully";
-        echo $row['usuario']."<br />\n";
-    }
 
-
-}else{
-    die("Connection failed: " . $conn->connect_error);
-    header('Location: index.php');
-}
 
 ?>

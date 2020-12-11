@@ -11,15 +11,13 @@ $pwd = $_POST['clave'];
 
 // Check connection
 if ( isset($bdd) ) {
-    echo "Connected successfully";
+    
     $stmt = $pdo->prepare("SELECT * FROM users ");
     while ($row = $stmt->fetch()) {
-        echo $row['name']."<br />\n";
+        echo "Connected successfully";
+        echo $row['usuario']."<br />\n";
     }
 
-while ($row = $stmt->fetch()) {
-    echo $row['usuario']."<br />\n";
-}
 
 }else{
     die("Connection failed: " . $conn->connect_error);

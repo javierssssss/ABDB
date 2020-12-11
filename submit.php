@@ -10,15 +10,15 @@ $pwd = $_POST['clave'];
 );
 
 // Check connection
-if ( $bdd==null ) {
-  die("Connection failed: " . $conn->connect_error);
+if ( $bdd!=null ) {
+    echo "Connected successfully";
   $stmt = $bdd->query("SELECT * FROM users");
 while ($row = $stmt->fetch()) {
     echo $row['name']."<br />\n";
 }
 
 }else{
-    echo "Connected successfully";
+    die("Connection failed: " . $conn->connect_error);
     header('Location: index.php');
 }
 

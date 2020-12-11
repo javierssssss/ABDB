@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="container">
-        <form method="POST" action="submit.php">
+        <form method="post" action="submit.php">
             <!-- Username -->
             <label for="name">Usuario:</label>
             <input required type="name" name="usuario">

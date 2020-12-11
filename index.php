@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
     <div id="container">
-    <?php       if (!isset($_SESSION['conectado'])): ?>
+    <?php       if (!isset($_SESSION['conectado'])    ): ?>
         <form method="post" action="submit.php">
             <!-- Username -->
             <label for="name">Usuario:</label>
@@ -28,11 +28,9 @@ session_start();
                 <input type="submit" value="Login">
             </div>
         </form>     
-        <?php else: ?>
+        <?php elseif ( isset($_SESSION['conectado']) ): ?>
             <p>Login con exito !</p>
             <form name="form1" method="post" action="<?php 
-            session_start();
-            session_status();
             session_destroy();
             header('Location: index.php');
             ?>" >

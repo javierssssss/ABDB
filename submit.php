@@ -20,13 +20,14 @@ try{
 
         $stmt->execute(['un' => $un, 'pwd' => $pwd]); 
         $result = $stmt->fetchAll();
+        echo count($result) ;
         if (count($result) > 0){
             echo "Logueado";
             session_status();
             $_SESSION["conectado"]=true;
            
         }
-        header('Location: index.php');
+        //header('Location: index.php');
     
     }else{
         die("Connection failed: " . $conn->connect_error);

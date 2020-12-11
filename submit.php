@@ -10,11 +10,11 @@ $pwd = $_POST['clave'];
 );
 
 // Check connection
-if ( $bdd!=null ) {
+if ( isset($bdd) ) {
     echo "Connected successfully";
     $stmt = $pdo->prepare("SELECT * FROM users WHERE usuario=:id AND clave =:pw");
     $stmt->execute(['usuario' => $un, 'pw' => $pwd]); 
-    
+
 while ($row = $stmt->fetch()) {
     echo $row['usuario']."<br />\n";
 }

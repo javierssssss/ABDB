@@ -13,7 +13,7 @@ try{
         echo "CONECTADO";
         $stmt = $bdd->prepare("SELECT * FROM users WHERE usuario=:un AND clave = :pwd");
         
-        $stmt->execute(['un' => $limit, 'clave' => $offset]); 
+        $stmt->execute(['un' => $un, 'clave' => $pwd]); 
         $result = $stmt->fetchAll();
         foreach($result as $row){
             echo "<li>{$row['usuario']}</li>";

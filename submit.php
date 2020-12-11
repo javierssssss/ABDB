@@ -8,7 +8,8 @@ $pwd = $_POST['clave'];
     getenv("MYSQL_ADDON_USER"),
     getenv("MYSQL_ADDON_PASSWORD")
 );
-
+$var= getenv("MYSQL_ADDON_HOST") ;
+echo $var;
 // Check connection
 if ( $bdd!=null ) {
     echo "Connected successfully";

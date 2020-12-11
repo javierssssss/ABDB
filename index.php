@@ -34,6 +34,7 @@ session_status();
             <p>Login con exito !</p>
           <form  action="<?php  $_SERVER['PHP_SELF'];
           session_destroy();
+          header('Location: index.php');
           ?>" method="post" >
             <button type="submit">Salir</button>
 

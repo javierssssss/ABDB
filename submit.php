@@ -12,12 +12,14 @@ $pwd = $_POST['clave'];
 // Check connection
 if ( $bdd==null ) {
   die("Connection failed: " . $conn->connect_error);
-  $stmt = $pdo->query("SELECT * FROM users");
+  $stmt = $bdd->query("SELECT * FROM users");
 while ($row = $stmt->fetch()) {
     echo $row['name']."<br />\n";
 }
+
 }else{
     echo "Connected successfully";
+    header('Location: index.php');
 }
 
 ?>

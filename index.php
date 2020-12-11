@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
     <!-- Title Page -->  
     <title>Login</title>
     <!-- CSS -->
@@ -13,11 +13,11 @@
         <form method="post" action="submit.php">
             <!-- Username -->
             <label for="name">Usuario:</label>
-            <input required type="name" name="usuario">
+            <input  type="name" name="usuario" required>
             <!-- Password -->
             <label for="username">Clave:</label>
            
-            <input required type="password" name="clave">
+            <input required type="password" name="clave" required>
             <div id="lower">
                 <!-- Submit Button -->
                 <input type="submit" value="Login">

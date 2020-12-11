@@ -1,8 +1,9 @@
 <?php
 
-//$un = $_POST['usuario'];
-//$pwd = $_POST['clave'];
+
 try{
+    $un = $_POST['usuario'];
+    $pwd = $_POST['clave'];
     $bdd = new PDO(
         "mysql:host=" . getenv("MYSQL_ADDON_HOST") . ";dbname=" . getenv("MYSQL_ADDON_DB"),
         getenv("MYSQL_ADDON_USER"),
@@ -10,9 +11,9 @@ try{
     );
     if ( isset($bdd) ) {
         echo "CONECTADO";
-        $stmt = $bdd->prepare("SELECT * FROM users");
+        $stmt = $bdd->prepare("SELECT * FROM users WHERE usuario=:un AND clave = :pwd");
         
-        $stmt->execute();
+        $stmt->execute(['un' => $limit, 'clave' => $offset]); 
         $result = $stmt->fetchAll();
         foreach($result as $row){
             echo "<li>{$row['usuario']}</li>";

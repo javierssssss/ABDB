@@ -26,6 +26,8 @@ try{
             session_status();
             $_SESSION["conectado"]="C";
             header('Location: index.php');
+        }else{
+            header('Location: index.php');
         }
        
     

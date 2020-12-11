@@ -6,7 +6,7 @@
 );
 
 // Check connection
-if ( $bdd!=null ) {
+if ( $bdd==null ) {
   die("Connection failed: " . $conn->connect_error);
 }else{
     echo "Connected successfully";
